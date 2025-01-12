@@ -13,7 +13,7 @@ import Link from "@mui/joy/Link";
 import { Box, Grid } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../firebase/config";
+/* import { auth } from "../../../firebase/config"; */
 import { useState } from "react";
 import axios from "axios";
 import {
@@ -78,7 +78,7 @@ export default function Login() {
     window.location.href = "http://localhost:8000/api/auth/google"; //navigates to url.
   }
 
-  const loginUser = async () => {
+  /* const loginUser = async () => {
     console.log("Entered loginUser");
     setLoading(true);
     try {
@@ -103,7 +103,7 @@ export default function Login() {
       //setError('Invalid email or password');
     }
   };
-
+ */
   const handleChange = (e: { target: { name: any; value: any } }) => {
     console.log("Entered handleChange");
     setLoginCreds((oldState) => ({
@@ -112,7 +112,7 @@ export default function Login() {
     }));
   };
 
-  const handleSubmit = async () => {
+  /* const handleSubmit = async () => {
     console.log("Entered handleSubmit");
     const { email, password } = loginCreds;
 
@@ -131,7 +131,7 @@ export default function Login() {
     setLoading(true);
     await loginUser();
     setLoading(false);
-  };
+  }; */
 
   return (
     <div className="login">
@@ -202,7 +202,7 @@ export default function Login() {
                 backgroundColor: loading ? "grey" : "primary.dark",
               },
             }}
-            onClick={handleSubmit}
+            /*  onClick={handleSubmit} */
             disabled={loading}
           >
             Log in
