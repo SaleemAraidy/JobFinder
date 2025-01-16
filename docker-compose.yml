@@ -10,7 +10,7 @@ services:
     container_name: postgres
     volumes:
       - './pgdata:/var/lib/postgresql/data'
-      - './jobs-server/init-db:/docker-entrypoint-initdb.d' # Mount the directory with the dump file
+      - './init-db:/docker-entrypoint-initdb.d' # Mount the directory with the dump file
     ports:
       - '5432:5432'
 
@@ -49,7 +49,7 @@ services:
     environment: 
       - PORT=${PORT} 
     env_file:
-      - .env
+      - ./jobs-server/.env
     ports: 
       - '8000:8000' 
     depends_on: 
