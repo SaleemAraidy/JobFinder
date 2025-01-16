@@ -28,7 +28,7 @@ import { Permission } from 'src/entities/permission.entity';
       isGlobal: true,
       ttl: 30 * 1000,
       store: redisStore,
-      host: 'localhost',
+      host: 'redis',
       port: 6379,
     }),
     AuthModule,
@@ -51,7 +51,7 @@ import { Permission } from 'src/entities/permission.entity';
         ); // Log values to check
         return {
           type: 'postgres',
-          host: 'localhost',
+          host: 'db',
           port: 5432,
           username: configService.get<string>('PGADMIN_USERNAME'),
           password: configService.get<string>('PGADMIN_PASSWORD'),
